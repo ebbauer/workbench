@@ -5,17 +5,18 @@ echo "Installing git and other basic stuff"
 sudo apt update
 sudo apt install -y vim git lsof openssh-server curl dos2unix tree
 sudo apt install -y make xclip unrar scrot build-essential net-tools parallel
-sudo apt install -y ntfs-3g nitrogen xautolock xbacklight blueman xdotool systemd-container
+sudo apt install -y ntfs-3g nitrogen systemd-container arandr
+sudo apt install -y apt-transport-https ca-certificates
 
-git config --global user.name "Juliano Galgaro"
-git config --global user.email "juliano.galgaro@neoway.com.br"
+git config --global user.name "Eduardo Bauer"
+git config --global user.email "eduardo.bauer@neoway.com.br"
 
 echo "Configure time properly"
 sudo ln -fs /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
 sudo timedatectl set-ntp true
 
 echo "Configure keyboard layout"
-sudo localectl set-keymap br-abnt2
+#sudo localectl set-keymap alt-intl
 
 echo "VPN Support"
 sudo apt install -y openvpn
@@ -36,10 +37,10 @@ echo "Installing vlc"
 sudo snap install vlc
 
 echo "Get dotfiles project"
-mkdir -p ${HOME}/workspace/julianogalgaro
-git clone https://github.com/julianogalgaro/dotfiles.git ${HOME}/workspace/julianogalgaro/dotfiles
+mkdir -p ${HOME}/workspace/bauer
+git clone https://github.com/ebbauer/dotfiles.git ${HOME}/workspace/dotfiles || :
 
 echo "Restoring background"
 mkdir -p ${HOME}/.config/nitrogen
-cp ./hack/cfg/nitrogen-bg-saved.cfg ${HOME}/.config/nitrogen/bg-saved.cfg
+cp ./hack/cfg/nitrogen-bg-saved.cfg ${HOME}/.config/nitrogen/bg-saved.cfg || :
 nitrogen --restore

@@ -3,9 +3,12 @@
 set -o errexit
 set -o nounset
 
-export GOROOT=$HOME/go
-export GOPATH=$HOME/workspace/go
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export GOBIN=$HOME/go/bin
 export PATH=$PATH":"$GOPATH"/bin:"$GOROOT"/bin"
+
+chmod +x hack/*.sh
 
 hack/essentials.sh
 hack/fonts.sh
@@ -16,12 +19,9 @@ hack/docker.sh
 hack/zsh.sh
 hack/sublime.sh
 hack/spotify.sh
-hack/slack.sh
 hack/datagrip.sh
 hack/robomongo.sh
-hack/java.sh
-hack/eclipse.sh
-hack/keepass.sh
-hack/vault-items.sh
-hack/profile.sh
-hach/nw.sh
+hack/nw.sh
+hack/kubectl.sh
+
+sudo apt autoremove -y
