@@ -24,5 +24,6 @@ hack/datagrip.sh
 hack/robomongo.sh
 hack/nw.sh
 hack/kubectl.sh
+hack/flameshot.sh
 
 sudo apt autoremove -y
