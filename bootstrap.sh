@@ -26,5 +26,6 @@ hack/nw.sh
 hack/kubectl.sh
 hack/flameshot.sh
 hack/bat.sh
+hack/postman.sh
 
 sudo apt autoremove -y
