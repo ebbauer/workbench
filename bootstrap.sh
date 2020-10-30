@@ -25,5 +25,6 @@ hack/robomongo.sh
 hack/nw.sh
 hack/kubectl.sh
 hack/flameshot.sh
+hack/bat.sh
 
 sudo apt autoremove -y
